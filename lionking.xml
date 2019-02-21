@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote name="rockchip-linux" fetch="../rockchip-linux"/>
+    <remote name="iadea" fetch="."/>
+
+    <default remote="iadea" revision="master" sync-j="4"/>
+
+    <project remote="iadea" path="iadea/build" name="iadea-linux-build">
+        <linkfile dest="build.sh" src="scripts/build.sh"/>
+        <linkfile dest="buildspec.mk" src="buildspec.mk.lionking"/>
+        <linkfile dest="Makefile" src="core/root.mk"/>
+    </project>
+    <project remote="iadea" path="iadea/kernel" name="iadea-linux-kernel"/>
+    <project remote="iadea" path="iadea/rootfs" name="iadea-linux-rootfs"/>
+    <project remote="iadea" path="iadea/oem" name="iadea-linux-oem"/>
+
+    <project remote="rockchip-linux" path="prebuilts/gcc/linux-x86/arm/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf" name="gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf"/>
+    <project remote="rockchip-linux" path="tools" name="tools"/>
+
+    <project remote="rockchip-linux" path="kernel" name="kernel" revision="stable-4.4-rk3288-linux"/>
+    <project remote="rockchip-linux" path="rootfs" name="rk-rootfs-build"/>
+
+</manifest>
